@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+
+
+<div class="container">
+    <form action="/Home/ExecutaLogin" method="POST" >
+        
+        <div>
+            <label for="nome">Usuário:</label>
+            <input id="User" name="User" value="@ViewBag.User" class="form-control" />
+        </div>
+        <div>
+            <label for="Senha">Senha:</label>
+            <input id="Senha" name="Senha" value="@ViewBag.Senha"class="form-control" />
+        </div>
+
+        <input type="submit" class="form-control" value="Acesse"/>
+        
+    </form>
+    <form action="/Home/Cadastro" method="POST">
+        <div>
+            <label>Se você não possui cadastro em nosso portal? Escolha seu perfil e cadastre-se.</label></br></br>
+            <input type="radio" id="Governo" name="TipoLogin" value="@ViewBag.TipoLogin G">
+            <label for="OpcaoCadastro">Governo</label>
+            <input type="radio" id="Entidade" name="TipoLogin" value="@ViewBag.TipoLogin E">
+            <label for="OpcaoCadastro">Entidade</label>
+            <input type="radio" id="Voluntário" name="TipoLogin" value="@ViewBag.TipoLogin V">
+            <label for="OpcaoCadastro">Voluntário</label>
+        </div>
+
+        <input type="submit" class="form-control" value="Cadastre-se Aqui" />
+
+    </form>
+
+</div>
